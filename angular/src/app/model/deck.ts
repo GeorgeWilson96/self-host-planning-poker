@@ -82,6 +82,15 @@ export const decks: Deck[] = [
       { value: 6, display: 'XL' },
       { value: 7, display: 'XXL' },
     ]
+  },
+  {
+    name: 'APPROVAL',
+    textValues: true,
+    values: [
+      { value: 1, display: '👍' },
+      { value: 0, display: '😐' },
+      { value: -1, display: '👎' },
+    ]
   }
 ]
 
