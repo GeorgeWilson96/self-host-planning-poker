@@ -7,8 +7,8 @@ RUN npm config set update-notifier false && \
   npm ci
 RUN npm run build self-host-planning-poker
 
-FROM docker.io/library/python:3.11.7-alpine3.18
-RUN adduser -H -D -u 1001 -G root default
+FROM docker.io/python:3.12-alpine3.21
+RUN adduser -H -D -u 1001 -G root default && apk upgrade
 WORKDIR /app
 COPY --chown=1001:0 flask/ ./
 COPY --chown=1001:0 --from=node_builder /angular/dist/self-host-planning-poker ./static
